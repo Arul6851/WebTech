@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animation</title>
+<style>
+.img1{
+width: 300px;
+height: 300px;
+
+}
+.img2{
+width: 300px;
+height: 300px;
+}
+.img3{
+width: 300px;
+height: 300px;
+}
+
+.table{
+margin: 0 auto;
+border-collapse: separate;
+border-spacing: 20px;
+padding-top: 5%;
+background-color: blanchedalmond;
+
+}
+@keyframes rotateImage {
+0% { transform: rotate(0deg); }
+50% { transform: rotate(180deg); }
+100% { transform: rotate(360deg); }
+}
+
+@keyframes changeTextColor {
+0%, 100% { color: black; }
+50% { color: red; }
+}
+@keyframes changeBgColor {
+0%, 100% { background-color: blanchedalmond; }
+50% { background-color: lightgray; }
+}
+
+.img1 {
+animation: rotateImage 5s infinite;
+}
+.img3{
+animation: rotateImage 5s infinite;
+}
+
+th{
+animation: changeTextColor 4s infinite;
+}
+
+.table {
+animation: changeBgColor 6s infinite;
+}
+</style>
+</head>
+<body style="background-color: azure;">
+<h1 style="text-align: center; font-size: 50px;">
+Most Famous Cities in the WORLD!!
+</h1>
+
+<table class="table">
+
+<thead>
+<tr>
+<th style="font-size: 30px;">BERLIN</th>
+<th style="font-size: 30px;">LONDON</th>
+<th style="font-size: 30px;">NEW YORK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<img class="img1" src="pic4.jpg">
+</td>
+<td>
+<img class="img2" usemap='#log1' src="pic3.jpg">
+</td>
+<td>
+<img class="img3" src="pic2.jpg">
+</td>
+</tr>
+</tbody>
+</table>
+
+<map name="log1">
+<area shape="rectangle" coords="3,1,1202,707" alt="no link" href="transition.html">
+</body>
+</html>
