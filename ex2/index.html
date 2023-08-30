@@ -6,56 +6,59 @@
     <link rel="stylesheet" href="stylez.css" />
     <title>Events</title>
     <style>
-      
-      body{
-        background-image: url(assets/decorated-banquet-hall-with-flowers.jpg);
-      background-size: cover;
-      background-repeat: no-repeat;
-      margin: 0%;
-      padding: 0%;
+      body {
+        background-image: url(assets/Background2.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: repeat;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
     </style>
   </head>
-  <body
-    style="
-      
-    "
-  >
-    <div class="screen">
-      <div class="title">
-        <img
-          src="assets/title-card-white.png"
-          alt="title"
-          width="550px"
-          height="100px"
-          style="position: absolute; transform: rotate(2deg);"
-        />
-        <h1
-          style="
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-weight: bold;
-            position: absolute;
-            margin-top: 20px;
-            color: black;
-          "
-        >
-          Choose Your Event
-        </h1>
-        
-        
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="card">
-            <img src="assets/sports.jpg" alt="sports image">
-          </div>
-          <div class="card"></div>
-          <div class="card"></div>
+  <body>
+    <div class="title">
+      <img
+        src="assets/title-card-white.png"
+        alt="title"
+        width="550px"
+        height="100px"
+        style="position: absolute; transform: rotate(2deg)"
+      />
+      <h1
+        style="
+          font-family: Georgia, 'Times New Roman', Times, serif;
+          font-weight: bold;
+          position: absolute;
+          margin-top: 20px;
+          color: black;
+        "
+      >
+        Choose Your Event
+      </h1>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="card" style="background-image: url(assets/sport.png)">
+          <h1>Sports</h1>
         </div>
-        <div class="row">
-          <div class="card"></div>
-          <div class="card"></div>
-          <!-- <div class="card"></div> -->
+        <div class="card" style="background-image: url(assets/wedding.png)">
+          <h1>Wedding</h1>
+        </div>
+        <div class="card" style="background-image: url(assets/workshop.png)">
+          <h1>Workshop</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="card" style="background-image: url(assets/concert.png)">
+          <h1>Concert</h1>
+        </div>
+        <div class="card" style="background-image: url(assets/book.png)">
+          <h1>Book Fair</h1>
         </div>
       </div>
     </div>
