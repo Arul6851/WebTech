@@ -3,8 +3,10 @@
   justify-content: center;
   align-items: center;
   font-size: 25px;
-  width: 350px;
+  width: 550px;
   height: 100px;
+  align-self: center;
+  text-align: center;
 }
 
 .container {
@@ -14,10 +16,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 110px;
-  width: 1200px;
-  height: 800px;
-
-  margin: 40px 10px 50px;
+  margin: 60px 10px;
 }
 
 .card {
@@ -28,8 +27,8 @@
   width: 270px;
   background-size: cover;
   border-radius: 7px;
-  /* box-shadow: 10px 25px 32px -8px rgb(197, 189, 245); */
-  box-shadow: 10px 25px 32px -8px white;
+  box-shadow:  10px 25px 35px -8px rgb(197, 189, 245);
+  /* box-shadow: 10px 25px 32px -8px white; */
   transition: transform 0.4s, box-shadow 0.4s;
 }
 
@@ -40,5 +39,5 @@
 
 .card:hover {
   transform: scale(1.1, 1.1);
-  box-shadow: 10px 25px 32px 8px white;
+  box-shadow: 10px 25px 35px 8px rgb(197, 189, 245);
 }
