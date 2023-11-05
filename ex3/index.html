@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Event Management</title>
+  </head>
+  <body>
+    <div class="left">
+      <p>Pink Jamun</p>
+      <div class="container">
+        <h1>Welcome to Your Event Management Website</h1>
+        <p>Plan, organize, and celebrate your events with ease.</p>
+      </div>
+    </div>
+    <div class="right">
+      <p>Get Started</p>
+      <div>
+        <button id="login">Log in</button>
+        <button id="signup">Sign up</button>
+      </div>
+    </div>
+    <script>
+      var button = document.getElementById("login");
+      button.addEventListener("click", () => {
+        window.location.href = "login.html";
+      });
+    </script>
+  </body>
+</html>
