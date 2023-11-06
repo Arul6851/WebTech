@@ -30,7 +30,6 @@ body {
 }
 
 .right {
-  padding-top: 300px;
   text-align: center;
   color: white;
   background-color: #313866;
@@ -38,14 +37,21 @@ body {
   height: 100vh;
 }
 
-.right p {
+.content {
+  margin-top: 300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.content p {
   font-size: 40px;
   margin: 15px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-weight: 900;
 }
 
-.right button {
+.content div button {
   margin: 3px;
   padding: 12px 70px;
   background-color: #a084e8;

@@ -1,10 +1,10 @@
 const credentials = [
   {
-    username: "admin",
+    username: "admin@mail.com",
     password: "1234",
   },
   {
-    username: "user",
+    username: "user@mail.com",
     password: "5678",
   },
 ];
@@ -14,32 +14,22 @@ const validate = (event) => {
 
   var i_email = document.getElementById("email").value;
   var i_password = document.getElementById("password").value;
-  var card = document.getElementById("contain");
-  let flag = true;
-  var errorField = document.createElement("div");
   var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  let isValid = false;
 
   credentials.forEach((element) => {
-    if (element.username === i_email && element.password === i_password)
-      flag = false;
+    if (element.username === i_email && element.password === i_password) {
+      isValid = true;
+    }
   });
-  if (i_email == "" || i_password == "") {
-    errorField.innerHTML("cannot be null");
-    card.appendChild(errorField);
-  } else if (flag == false) {
-    errorField.innerHTML("cannot be null");
-    card.appendChild(errorField);
+
+  if (i_email === "" || i_password === "") {
+    alert("Fields cannot be null");
   } else if (!i_email.match(emailPattern)) {
-    errorField.innerHTML("cannot be null");
-    card.appendChild(errorField);
+    alert("Enter a valid email");
+  } else if (!isValid) {
+    alert("Enter the right credentials");
   } else {
-    // window.location.href = "signup.html";
-    errorField.innerHTML("cannot be null");
-    card.appendChild(errorField);
+    window.location.href = "signup.html";
   }
 };
-
-// const validate = () => {
-//   alert("Button Pressed");
-//   return false;
-// };

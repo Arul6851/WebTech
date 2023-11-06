@@ -1,0 +1,45 @@
+/* Add this CSS to your existing stylesheet */
+
+body {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to right, #cc3aa5, #2c0058);
+  padding-top: 20vh;
+}
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 5px;
+  background-color: white;
+  flex-wrap: wrap;
+}
+
+.Card input {
+  width: 250px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #f1efef;
+  border-radius: 4px;
+}
+
+/* Add this CSS to your existing stylesheet or create a new one */
+
+.checkbox-columns {
+  display: flex;
+  margin: 10px 0;
+}
+
+.column {
+  flex: 1;
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  margin-bottom: 10px;
+}
