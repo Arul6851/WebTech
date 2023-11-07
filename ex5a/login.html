@@ -9,7 +9,7 @@
   <body>
     <div class="card">
       <h1>Welcome</h1>
-      <form onsubmit="validate(event)">
+      <form action="LoginServlet" method="POST">
         <input type="text" name="name" id="name" placeholder="Email" /><br />
         <input
           type="password"
@@ -33,13 +33,14 @@
         <br />
         <div class="info">
           <a href="https://www.facebook.com"
-            ><img src="assests/icons8-facebook-48.png" alt=""
+            ><img src="/assests/icons8-facebook.svg" alt=""
           /></a>
           <a href="https://www.google.com"
-            ><img src="assests/icons8-google-48.png" alt=""
+            ><img src="/assests/icons8-google.svg" alt=""
           /></a>
           <a href="https://www.twitter.com"
-            ><img src="assests/icons8-twitter-48.png">
+            ><img src="/assests/icons8-twitter.svg" alt=""
+          /></a>
         </div>
       </div>
       <hr />
@@ -48,5 +49,4 @@
       </div>
     </div>
   </body>
-  <script src="app.js"></script>
 </html>
