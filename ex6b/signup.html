@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="signup.css" />
+    <title>Sign up</title>
+  </head>
+  <body>
+    <div class="Card">
+      <div class="title">
+        <h1 style="margin: 0px">Sign up</h1>
+        <p style="margin-bottom: 50px">
+          Let's get started with your 30 days free trial
+        </p>
+      </div>
+
+      <form action="SignupServlet" method="post">
+        <div class="textfields">
+          <p>Enter your details</p>
+          <input
+            type="text"
+            name="username"
+            id="uname"
+            placeholder="Username"
+          />
+          <input type="text" name="email" id="email" placeholder="Email" />
+          <input type="password" name="pass" id="pass" placeholder="Password" />
+          <input
+            type="password"
+            name="repass"
+            id="repass"
+            placeholder="Confirm Password"
+          />
+        </div>
+        <p style="margin-top: 50px; font-size: 18px; font-weight: 600">
+          Choose your favourite events
+        </p>
+        <div class="checkbox-columns">
+          <div class="column">
+            <div class="checkbox-group">
+              <input type="checkbox" name="Sports" id="Sports" />
+              <label for="Sports">Sports</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" name="Wedding" id="Wedding" />
+              <label for="Wedding">Wedding</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" name="Workshop" id="Workshop" />
+              <label for="Workshop">Workshop</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" name="Concert" id="Concert" />
+              <label for="Concert">Concert</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" name="Christmas" id="Christmas" />
+              <label for="Christmas">Christmas</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" name="BookFair" id="BookFair" />
+              <label for="BookFair">Book</label>
+            </div>
+          </div>
+          <div class="column">
+            <div class="checkbox-group">
+              <input type="checkbox" name="Easter" id="Easter" />
+              <label for="Easter">Easter</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" name="Diwali" id="Diwali" />
+              <label for="Diwali">Diwali</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" name="Conference" id="Conference" />
+              <label for="Conference">Conference</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" name="Trading" id="Trading" />
+              <label for="Trading">Trading</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" name="Network" id="Network" />
+              <label for="Network">Network</label>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" name="Charity" id="Charity" />
+              <label for="Charity">Charity</label>
+            </div>
+          </div>
+        </div>
+        <input
+          type="submit"
+          name="submit"
+          id="submit"
+          style="margin-top: 30px"
+        />
+      </form>
+    </div>
+  </body>
+</html>
