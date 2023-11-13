@@ -132,7 +132,7 @@ public class SignupServlet extends HttpServlet {
 
     public void saveUser(String username, String email, String password) {
         try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)) {
-            String query = "INSERT INTO users VALUES (?, ?, ?)";
+            String query = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
             try (PreparedStatement statement = connection.prepareStatement(query)) {
                 statement.setString(1, username);
                 statement.setString(2, email);

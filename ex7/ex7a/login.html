@@ -9,17 +9,17 @@
   <body>
     <div class="card">
       <h1>Welcome</h1>
-      <form onsubmit="validate(event)">
+      <form action="/LoginServlet" method="post">
         <input
           type="text"
-          name="mail"
-          id="email"
+          name="name"
+          id="name"
           placeholder="Email or Username"
         /><br />
         <input
           type="password"
           name="pass"
-          id="password"
+          id="pass"
           placeholder="Password"
         /><br />
         <input type="submit" id="submit" />
