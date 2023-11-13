@@ -1,13 +1,24 @@
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.List;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.UUID;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/SignupServlet")
 public class SignupServlet extends HttpServlet {
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/webtech";
+    private static final String JDBC_USER = "root";
+    private static final String JDBC_PASSWORD = "";
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
@@ -23,13 +34,11 @@ public class SignupServlet extends HttpServlet {
                 "Easter", "Diwali", "Conference", "Trading", "Network", "Charity"
         };
 
-        String sessionId = UUID.randomUUID().toString(); // Generate a unique session ID
         out.println("<!DOCTYPE html>");
         out.println("<html lang=\"en\">");
         out.println("<head>");
         out.println("<meta charset=\"UTF-8\" />");
         out.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />");
-        out.println("<title>Selected Events</title>");
         out.println("<style>");
         out.println("body {");
         out.println("  background: linear-gradient(to right, #cc3aa5, #2c0058);");
@@ -74,30 +83,73 @@ public class SignupServlet extends HttpServlet {
         out.println("  transform: scale(1.1, 1.1);");
         out.println("  box-shadow: 10px 25px 35px 8px rgb(197, 189, 245);");
         out.println("}");
+        out.println(".error {");
+        out.println("  font-family: Georgia, 'Times New Roman', Times, serif;");
+        out.println("  font-weight: bold;");
+        out.println("  text-align: center;");
+        out.println("  margin-top: 20px;");
+        out.println("  color: red;");
+        out.println("  font-size: 18px;");
+        out.println("}");
         out.println("</style>");
+        out.println("<title>Selected Events</title>");
         out.println("</head>");
         out.println("<body>");
         if (!password.equals(reenteredPassword)) {
-            out.println("<p>Passwords do not match. Try Again!</p>");
+            out.println("<p class=\"error\">Passwords do not match. Try Again!</p>");
         } else {
+            HttpSession session = request.getSession(true);
+
+            saveUser(username, email, password);
+
+            String selectedEvents = "";
             out.println("<p class=\"title\">Welcome " + username + "<br/>These are your favorite events</p>");
             out.println("<div class=\"container\">");
 
             for (String event : checkboxes) {
                 String eventValue = request.getParameter(event);
                 if (eventValue != null) {
-                    String url = "UrlServlet?event=" + event + "&session=" + sessionId;
-                    out.println(
-                            "<a style=\"text-decoration:none\" href=\"" + url
-                                    + "\"><div class=\"card\" style=\"background-image: url(assets/" + event
-                                    + ".png)\">");
-                    out.println("  <h1>" + event + "</h1>");
-                    out.println("</div></a>");
+                    session.setAttribute(event, "selected");
+                    selectedEvents += "<a href=\"SessionServlet?event=" + event
+                            + "\"><div class=\"card\" style=\"background-image: url(assets/" + event + ".png)\">";
+                    selectedEvents += "  <h1>" + event + "</h1>";
+                    selectedEvents += "</div></a>";
+
+                    saveUserEvent(username, event);
                 }
             }
+
+            out.println(selectedEvents);
+            out.println("</div>");
         }
-        out.println("</div>");
         out.println("</body>");
         out.println("</html>");
+    }
+
+    private void saveUser(String username, String email, String password) {
+        try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)) {
+            String query = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+            try (PreparedStatement statement = connection.prepareStatement(query)) {
+                statement.setString(1, username);
+                statement.setString(2, email);
+                statement.setString(3, password);
+                statement.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void saveUserEvent(String username, String eventName) {
+        try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)) {
+            String query = "INSERT INTO user_events (user_id, event_name) VALUES ((SELECT user_id FROM users WHERE username = ?), ?)";
+            try (PreparedStatement statement = connection.prepareStatement(query)) {
+                statement.setString(1, username);
+                statement.setString(2, eventName);
+                statement.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

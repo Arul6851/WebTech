@@ -5,19 +5,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/HiddenServlet")
-public class HiddenServlet extends HttpServlet {
+@WebServlet("/SessionServlet")
+public class SessionServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        // Retrieve data from the hidden field
-        String username = (String) request.getAttribute("username");
-        String email = (String) request.getAttribute("email");
-
-        // Retrieve selected events
-        String[] selectedEvents = request.getParameterValues("selectedEvents");
+        String event = request.getParameter("event");
 
         out.println("<!DOCTYPE html>");
         out.println("<html lang=\"en\">");
@@ -45,19 +40,7 @@ public class HiddenServlet extends HttpServlet {
         out.println("</style>");
         out.println("</head>");
         out.println("<body>");
-        out.println("<p class=\"details\">Details for the selected event using Hidden Fields :</p>");
-        out.println("<p>Username: " + username + "</p>");
-        out.println("<p>Email: " + email + "</p>");
-
-        if (selectedEvents != null) {
-            out.println("<p>Selected Events:</p>");
-            out.println("<ul>");
-            for (String event : selectedEvents) {
-                out.println("<li>" + event + "</li>");
-            }
-            out.println("</ul>");
-        }
-
+        out.println("<p class=\"details\">Details for the selected event using Sessions : " + event + "</p>");
         out.println("</body>");
         out.println("</html>");
     }

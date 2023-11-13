@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,7 +13,8 @@ public class CookieServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        String event = request.getParameter("event");
+        Cookie[] cookies = request.getCookies();
+        // String event = request.getParameter("event");
 
         out.println("<!DOCTYPE html>");
         out.println("<html lang=\"en\">");
@@ -40,7 +42,14 @@ public class CookieServlet extends HttpServlet {
         out.println("</style>");
         out.println("</head>");
         out.println("<body>");
-        out.println("<p class=\"details\">Details for the selected event using Cookies : " + event + "</p>");
+        out.println("<p class=\"details\">Details for the selected event using Cookies: <br/></p>");
+        if (cookies != null)
+            for (Cookie cookie : cookies)
+                out.println("<p class=\"details\">" + cookie.getValue() + "</p>");
+
+        else
+            out.println("<p class=\"details\">Event not selected</p>");
+
         out.println("</body>");
         out.println("</html>");
     }

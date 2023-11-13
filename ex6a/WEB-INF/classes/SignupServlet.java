@@ -91,14 +91,14 @@ public class SignupServlet extends HttpServlet {
                     eventCookie.setMaxAge(30 * 60); // Set the cookie's maximum age (adjust as needed)
                     response.addCookie(eventCookie);
 
-                    selectedEvents += "<a style=\"text-decoration:none;\" href=\"CookieServlet?event=" + event
-                            + "\"><div class=\"card\" style=\"background-image: url(assets/" + event + ".png)\">";
+                    selectedEvents += "<a style=\"text-decoration:none;\" href=\"CookieServlet\"><div class=\"card\" style=\"background-image: url(assets/"
+                            + event + ".png)\">";
                     selectedEvents += "  <h1>" + event + "</h1>";
                     selectedEvents += "</div></a>";
                 }
             }
 
-            out.println(selectedEvents);
+            out.println("<p>" + selectedEvents + "<p>");
             out.println("</div>");
         }
         out.println("</body>");

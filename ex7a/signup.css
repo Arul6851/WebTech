@@ -1,0 +1,67 @@
+body {
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to right, #cc3aa5, #2c0058);
+}
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 30px;
+  border-radius: 5px;
+  background-color: white;
+  flex-wrap: wrap;
+  color: #5b0888;
+  scale: 0.9;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.textfields p {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 5px;
+}
+
+.textfields input {
+  width: 97%;
+  padding: 5px 0px 5px 10px;
+  border: none;
+  background-color: #f1efef;
+  border-radius: 4px;
+}
+
+.textfields {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.checkbox-columns {
+  display: flex;
+  margin: 10px 0;
+  justify-content: center;
+  gap: 80px;
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#submit {
+  background-color: #5b0888;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}

@@ -24,8 +24,8 @@ public class SessionServlet extends HttpServlet {
         out.println("body {");
         out.println("  background: linear-gradient(to right, #cc3aa5, #2c0058);");
         out.println("  background-size: cover;");
-        out.println("  height: 100vh;");
-        out.println("  width: 100vw;");
+        out.println("  height: 100%;");
+        out.println("  width: 100%;");
         out.println("  background-position: center;");
         out.println("  background-repeat: no-repeat;");
         out.println("}");
