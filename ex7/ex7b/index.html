@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Management Quiz</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Encode Sans"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Encode Sans";
+        background: linear-gradient(to right, #cc3aa5, #2c0058);
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      form {
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 50px;
+      }
+      h2 {
+        text-align: center;
+        color: black;
+      }
+      p {
+        font-weight: bold;
+        color: #2c0058;
+      }
+      input[type="submit"] {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px;
+        border: none;
+        border-radius: 50px;
+        background-color: #2c0058;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      input[type="radio"] {
+        margin-right: 10px;
+      }
+      li {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="exam_result" method="post">
+      <h2>WELCOME TO THE EVENT MANAGEMENT QUIZ!</h2>
+      <p>Question 1: What does RSVP stand for in event management?</p>
+      <input type="radio" name="answer1" value="Respond as Soon as Possible" required /> Respond as Soon as Possible
+      <input type="radio" name="answer1" value="Receiving Special VIP Pass" required /> Receiving Special VIP Pass
+      <input type="radio" name="answer1" value="Reserved Seating Very Promptly" required /> Reserved Seating Very Promptly
+      <input type="radio" name="answer1" value="Request for Special Venue Planning" required />
+      Request for Special Venue Planning<br />
+      <p>Question 2: What is a site inspection in event planning?</p>
+      <input type="radio" name="answer2" value="Testing the Event Website" required /> Testing the Event Website
+      <input type="radio" name="answer2" value="Checking the Venue in Advance" required /> Checking the Venue in Advance
+      <input type="radio" name="answer2" value="Inspecting Event Decorations" required /> Inspecting Event Decorations
+      <input type="radio" name="answer2" value="Evaluating Event Feedback" required />
+      Evaluating Event Feedback<br />
+      <p>Question 3: What is the purpose of a contingency plan in event management?</p>
+      <input type="radio" name="answer3" value="Backup Plan for Unforeseen Situations" required />
+      Backup Plan for Unforeseen Situations
+      <input type="radio" name="answer3" value="Plan B for Entertainment" required />
+      Plan B for Entertainment
+      <input type="radio" name="answer3" value="Secondary Guest List" required /> Secondary Guest List
+      <input type="radio" name="answer3" value="Extra Seating Arrangements" required />
+      Extra Seating Arrangements<br />
+      <p>Question 4: What does AV stand for in the context of event technology?</p>
+      <input type="radio" name="answer4" value="Audio and Video" required /> Audio and Video
+      <input type="radio" name="answer4" value="After Venue" required /> After Venue
+      <input type="radio" name="answer4" value="All VIP" required /> All VIP
+      <input type="radio" name="answer4" value="Attendee Verification" required /> Attendee Verification<br />
+      <p>Question 5: In event planning, what is a "run of show"?</p>
+      <input type="radio" name="answer5" value="Sequence of Event Activities" required />
+      Sequence of Event Activities
+      <input type="radio" name="answer5" value="Jogging Route for Participants" required /> Jogging Route for Participants
+      <input type="radio" name="answer5" value="Event Dress Code" required /> Event Dress Code
+      <input type="radio" name="answer5" value="Runway Show for Fashion Events" required />
+      Runway Show for Fashion Events<br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
