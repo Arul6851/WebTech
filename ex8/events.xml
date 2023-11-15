@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<events>
+    <event>
+        <name>Conference A</name>
+        <date>2023-12-01</date>
+        <location>City Center</location>
+        <organizer>Event Company X</organizer>
+        <attendees>500</attendees>
+    </event>
+    <event>
+        <name>Workshop B</name>
+        <date>2023-11-15</date>
+        <location>Convention Hall</location>
+        <organizer>Event Management Solutions</organizer>
+        <attendees>200</attendees>
+    </event>
+    <event>
+        <name>Expo C</name>
+        <date>2024-02-28</date>
+        <location>Exhibition Center</location>
+        <organizer>Event Coordinators Inc.</organizer>
+        <attendees>800</attendees>
+    </event>
+    <event>
+        <name>Seminar D</name>
+        <date>2024-03-15</date>
+        <location>Business Hub</location>
+        <organizer>Professional Events Group</organizer>
+        <attendees>150</attendees>
+    </event>
+</events>
